@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class PlayerTracker : MonoBehaviour
 {
-    public Transform trackedObject; // The object the camera will follow
-    public float Distance = 10f; // Maximum distance behind the player
-    public float cameraHeight = 5f; // How high above the player the camera is
-    public float updateSpeed = 10f; // How fast the camera moves to its target position
+    public Transform trackedObject; 
+    public float Distance = 10f; 
+    public float cameraHeight = 5f; 
+    public float updateSpeed = 10f; 
 
-    private Vector3 initialForward; // The initial forward direction of the tracked object
+    private Vector3 initialForward; 
 
     void Start()
     {

@@ -9,11 +9,11 @@ public class EndGame : MonoBehaviour
     public GameObject restartButton;
     private float delay = 1.5f;
 
-    public RectTransform score; // Assign the UI element in the inspector
+    public RectTransform score; // Assign the UI element in inspector
 
-    public Vector2 newSize = new Vector2(400, 100); // New size for the UI element
-    public Vector3 newPosition = new Vector3(33, 13, 0); // New position for the UI element
-    public TextMeshProUGUI uiText; // Assign your TextMeshPro element in the inspector
+    public Vector2 newSize = new Vector2(400, 100); // New size for text element
+    public Vector3 newPosition = new Vector3(33, 13, 0); // New position for text element
+    public TextMeshProUGUI uiText; // Assign TextMeshPro element in inspector
     public int newFontSize = 50;
 
 

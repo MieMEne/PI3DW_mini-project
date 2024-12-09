@@ -13,17 +13,19 @@ public class pointSystem : MonoBehaviour
     public int heightMultiplier = 5;
 
     public Rigidbody rb;
-    private bool isLockedToFinishLine = false; // Track if the player is locked to the finish line
-    public float glideSpeed = 2f; // Speed at which the player glides down
+    private bool isLockedToFinishLine = false; 
+    public float glideSpeed = 2f; 
 
     private void start()
     {
         rb = GetComponent<Rigidbody>();
+        UpdateScoreUI();
     }
 
+    //Updates score for Collected coins and when crossing finish line
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger Entered: " + other.gameObject.name); // Log the object that was collided with
+        Debug.Log("Trigger Entered: " + other.gameObject.name); 
         if (other.CompareTag("coin")) 
         {
             scoreCount++;
@@ -42,10 +44,23 @@ public class pointSystem : MonoBehaviour
         }
     }
 
+    //Enables updating score externally
+    public void AddPoints(int points)
+    {
+        scoreCount += points;
+        UpdateScoreUI();
+        Debug.Log("Score: " + scoreCount);
+    }
+    //Enables updating score externally
+    private void UpdateScoreUI()
+    {
+        scoreText.text = "Score: " + scoreCount.ToString();
+    }
+
     private void LockPlayerToFinishLine()
     {
         isLockedToFinishLine = true;
-        rb.velocity = Vector3.zero; // Stop player movement after collision
+        rb.velocity = Vector3.zero; 
     }
 
     // Coroutine to make the player glide down after locking in (The following code is inspired by chatGPT)

@@ -5,6 +5,8 @@ public class PlayerHealth : MonoBehaviour
     public float maxHealth = 100f;
     private float currentHealth;
 
+    public EndGame endGameScript;
+
     void Start()
     {
         currentHealth = maxHealth;
@@ -24,6 +26,7 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         Debug.Log("Player has died!");
-        // Handle death logic, e.g., restart the game or show a game over screen
+        endGameScript.showReplayScreen();
     }
 }
+// This code is inspired by chatGPT
